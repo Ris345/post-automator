@@ -1,59 +1,29 @@
 # post-automator
 
-Generates and publishes a weekly LinkedIn post using OpenAI, triggered by EventBridge Scheduler and running on AWS Lambda.
+Posts to LinkedIn every Sunday at 1PM EST. Runs on AWS Lambda, triggered by EventBridge Scheduler, uses OpenAI to generate the content.
 
-## Architecture
+## Stack
 
-```
-EventBridge Scheduler (cron: Sunday 1PM UTC)
-        │
-        ▼
-  Lambda (ECR container)
-        │
-        ├──▶ OpenAI API (generate post)
-        └──▶ LinkedIn UGC API (publish post)
-```
+- **Runtime** — Python 3.12 on Lambda (container image via ECR)
+- **Trigger** — EventBridge Scheduler (`cron(0 13 ? * SUN *)`, `America/New_York`)
+- **AI** — OpenAI `gpt-4o-mini`
+- **Infra** — Terraform
 
-Secrets are stored as Lambda environment variables.
+## Setup
 
-## Structure
+1. Copy `.env.example` to `.env` and fill in your keys
+2. Build and push the image to ECR
+3. Run `terraform apply`
 
-```
-├── lambda/
-│   ├── handler.py
-│   ├── openai_client.py
-│   ├── linkedin_client.py
-│   ├── secrets.py
-│   ├── prompt.py
-│   └── requirements.txt
-├── terraform/
-│   ├── main.tf
-│   ├── variables.tf
-│   ├── ecr.tf
-│   ├── iam.tf
-│   ├── lambda.tf
-│   ├── scheduler.tf
-│   └── outputs.tf
-└── .env.example
-```
-
-## Deploy
+## Deploying changes
 
 ```bash
-# Build and push image
 docker build --platform linux/amd64 --provenance=false -t <ecr-url>:latest ./lambda
 docker push <ecr-url>:latest
-
-# Provision infra
-cd terraform
-terraform init
-terraform apply
+aws lambda update-function-code --function-name post-automator --image-uri <ecr-url>:latest
 ```
 
-## Prerequisites
+## Notes
 
-- AWS IAM user with Lambda, ECR, EventBridge, and IAM permissions
-- OpenAI API key
-- LinkedIn OAuth token (`w_member_social` scope) + person URN
-
-> LinkedIn tokens expire every 60 days — update `LINKEDIN_ACCESS_TOKEN` in Lambda env vars when they do.
+- LinkedIn OAuth tokens expire every 60 days — update `LINKEDIN_ACCESS_TOKEN` in Lambda env vars
+- Tune the post style in `lambda/prompt.py`

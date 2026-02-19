@@ -19,6 +19,7 @@ Write one practical AWS or platform engineering tip from Rishav.
 Good examples:
 - "Running more than two EKS node groups without Cluster Autoscaler means you're probably over-provisioning without realizing it."
 - "Using AWS Lambda with API Gateway can reduce costs significantly, as you only pay for the compute time your code actually uses, often cutting server expenses by up to 70%."
+- "Connecting your Datadog APM to AWS X-Ray provides end-to-end tracing that can reduce debugging time by over 40% when diagnosing application latency issues."
 
 Bad examples, never write like this:
 - "I was surprised to find that our GPU cold start latency increased by over 150% when scaling our MLOps inference workload due to a misconfigured auto-scaling policy."
