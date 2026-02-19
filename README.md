@@ -1,238 +1,59 @@
-# LinkedIn Post Automator
+# post-automator
 
-A serverless system that autonomously generates and publishes weekly LinkedIn posts using OpenAI and the LinkedIn API, orchestrated entirely on AWS.
+Generates and publishes a weekly LinkedIn post using OpenAI, triggered by EventBridge Scheduler and running on AWS Lambda.
 
----
-
-## Architecture Overview
+## Architecture
 
 ```
-┌──────────────────────────────────────────────────────────────┐
-│                          AWS Cloud                           │
-│                                                              │
-│   ┌───────────────────────┐                                  │
-│   │  EventBridge          │                                  │
-│   │  Scheduler            │                                  │
-│   │                       │                                  │
-│   │  cron(0 13 ? * SUN *) │──── trigger ────┐               │
-│   │  (Every Sunday 1PM UTC│                  │               │
-│   └───────────────────────┘                  ▼               │
-│                                  ┌───────────────────────┐   │
-│                                  │    Lambda Function    │   │
-│                                  │                       │   │
-│                                  │  1. Fetch secrets     │   │
-│                                  │  2. Generate post     │   │
-│                                  │  3. Publish post      │   │
-│                                  └───────────────────────┘   │
-│                                      │             │         │
-│                        fetch secrets │             │         │
-│                                      ▼             │         │
-│                          ┌─────────────────────┐   │         │
-│                          │   Secrets Manager   │   │         │
-│                          │                     │   │         │
-│                          │  - OPENAI_API_KEY   │   │         │
-│                          │  - LI_ACCESS_TOKEN  │   │         │
-│                          │  - LI_PERSON_URN    │   │         │
-│                          └─────────────────────┘   │         │
-│                                                     │         │
-└─────────────────────────────────────────────────────┼─────────┘
-                                                      │
-                          ┌───────────────────────────┘
-                          │
-              ┌───────────┴───────────┐
-              │                       │
-              ▼                       ▼
-  ┌────────────────────┐   ┌────────────────────┐
-  │    OpenAI API      │   │   LinkedIn API     │
-  │                    │   │                    │
-  │  gpt-4o-mini       │   │  UGC Posts API     │
-  │  generates post    │   │  publishes post    │
-  └────────────────────┘   └────────────────────┘
+EventBridge Scheduler (cron: Sunday 1PM UTC)
+        │
+        ▼
+  Lambda (ECR container)
+        │
+        ├──▶ OpenAI API (generate post)
+        └──▶ LinkedIn UGC API (publish post)
 ```
 
----
+Secrets are stored as Lambda environment variables.
 
-## Data Flow
-
-```
-EventBridge          Lambda              Secrets Manager
-    │                  │                       │
-    │─── trigger ──────▶                       │
-    │                  │─── get_secret() ──────▶
-    │                  │◀── openai_key,         │
-    │                  │    li_token,           │
-    │                  │    li_urn ────────────│
-    │                  │
-    │               Lambda                  OpenAI
-    │                  │                       │
-    │                  │─── chat.completions() ▶
-    │                  │◀── post text ─────────│
-    │                  │
-    │               Lambda                 LinkedIn
-    │                  │                       │
-    │                  │─── POST /ugcPosts ────▶
-    │                  │◀── 201 Created ───────│
-```
-
----
-
-## Project Structure
+## Structure
 
 ```
-linkedin-automator/
-│
-├── README.md                    # This file
-│
 ├── lambda/
-│   ├── handler.py               # Lambda entrypoint
-│   ├── openai_client.py         # OpenAI post generation
-│   ├── linkedin_client.py       # LinkedIn API publisher
-│   ├── secrets.py               # Secrets Manager wrapper
-│   ├── prompt.py                # System + user prompt definitions
-│   └── requirements.txt         # Python dependencies
-│
+│   ├── handler.py
+│   ├── openai_client.py
+│   ├── linkedin_client.py
+│   ├── secrets.py
+│   ├── prompt.py
+│   └── requirements.txt
 ├── terraform/
-│   ├── main.tf                  # Root module, provider config
-│   ├── variables.tf             # Input variables
-│   ├── outputs.tf               # Stack outputs
-│   ├── lambda.tf                # Lambda function + IAM role
-│   ├── scheduler.tf             # EventBridge Scheduler
-│   └── secrets.tf               # Secrets Manager resources
-│
-├── scripts/
-│   ├── build_lambda.sh          # Package Lambda zip for deployment
-│   └── rotate_token.sh          # Update LinkedIn token in Secrets Manager
-│
-└── .gitignore
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── ecr.tf
+│   ├── iam.tf
+│   ├── lambda.tf
+│   ├── scheduler.tf
+│   └── outputs.tf
+└── .env.example
 ```
 
----
-
-## Prerequisites
-
-| Requirement | Notes |
-|---|---|
-| AWS account | IAM user with permissions for Lambda, EventBridge, Secrets Manager, IAM |
-| Terraform >= 1.6 | `brew install terraform` |
-| Python 3.12 | Lambda runtime |
-| OpenAI API key | `platform.openai.com` |
-| LinkedIn access token | OAuth 2.0, `w_member_social` scope |
-| LinkedIn person URN | `urn:li:person:<id>` — from `/v2/userinfo` |
-
----
-
-## LinkedIn API Setup
-
-LinkedIn OAuth tokens expire every **60 days**. Before deploying:
-
-1. Create a LinkedIn Developer App at `developer.linkedin.com`
-2. Request the `w_member_social` OAuth 2.0 scope
-3. Generate an access token via the Authorization Code Flow
-4. Get your person URN from the `/v2/userinfo` endpoint
-
-> Use `scripts/rotate_token.sh` to update the token in Secrets Manager before it expires.
-
----
-
-## Deployment
-
-### 1. Build the Lambda package
+## Deploy
 
 ```bash
-./scripts/build_lambda.sh
-```
+# Build and push image
+docker build --platform linux/amd64 --provenance=false -t <ecr-url>:latest ./lambda
+docker push <ecr-url>:latest
 
-### 2. Configure Terraform variables
-
-```bash
-cp terraform/terraform.tfvars.example terraform/terraform.tfvars
-# Edit with your AWS region
-```
-
-### 3. Deploy infrastructure
-
-```bash
+# Provision infra
 cd terraform
 terraform init
-terraform plan
 terraform apply
 ```
 
-### 4. Populate secrets
+## Prerequisites
 
-```bash
-aws secretsmanager put-secret-value \
-  --secret-id linkedin-automator/openai-api-key \
-  --secret-string '{"api_key":"sk-..."}'
+- AWS IAM user with Lambda, ECR, EventBridge, and IAM permissions
+- OpenAI API key
+- LinkedIn OAuth token (`w_member_social` scope) + person URN
 
-aws secretsmanager put-secret-value \
-  --secret-id linkedin-automator/linkedin-credentials \
-  --secret-string '{"access_token":"AQ...","person_urn":"urn:li:person:XXXXX"}'
-```
-
----
-
-## Configuration
-
-### Schedule
-
-Every Sunday at 1:00 PM UTC. Change in `terraform/variables.tf`:
-
-```hcl
-variable "schedule_expression" {
-  default = "cron(0 13 ? * SUN *)"
-}
-```
-
-### Post Prompt
-
-Tune in `lambda/prompt.py` — no infrastructure change needed.
-
-The model is instructed to:
-- Write as a senior infrastructure engineer
-- Cover: AWS infrastructure, chaos engineering, SRE, platform engineering, cloud cost optimization, MLOps infrastructure
-- Stay under 150 words, no hashtags, no hype, sound human
-- End with one sharp question
-
----
-
-## IAM Permissions
-
-The Lambda execution role has least-privilege access:
-
-| Service | Actions |
-|---|---|
-| Secrets Manager | `GetSecretValue` on `linkedin-automator/*` |
-
----
-
-## Cost Estimate
-
-| Service | Usage | Est. Monthly Cost |
-|---|---|---|
-| Lambda | 4 invocations/month, ~10s each | < $0.01 |
-| EventBridge Scheduler | 4 invocations/month | < $0.01 |
-| Secrets Manager | 2 secrets | ~$0.80 |
-| OpenAI gpt-4o-mini | ~500 tokens/week | ~$0.01 |
-| **Total** | | **~$0.82/month** |
-
----
-
-## Local Testing
-
-```bash
-pip install -r lambda/requirements.txt
-
-export AWS_PROFILE=your-profile
-export AWS_REGION=us-east-1
-
-python -c "from lambda.handler import handler; handler({}, {})"
-```
-
----
-
-## Roadmap
-
-- [ ] LinkedIn OAuth token auto-refresh
-- [ ] Post topic rotation to avoid repetition
-- [ ] Slack notification on failure
+> LinkedIn tokens expire every 60 days — update `LINKEDIN_ACCESS_TOKEN` in Lambda env vars when they do.
