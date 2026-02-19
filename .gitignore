@@ -1,0 +1,25 @@
+# Terraform
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/terraform.tfvars
+*.tfplan
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# Local env
+.env
+
+# Build artifacts
+.build/
+
+# Claude
+.claude/
+
+# CI/CD
+.github/
