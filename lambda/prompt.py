@@ -11,6 +11,8 @@ Rules:
 - No passive voice
 - Never start with "If" — start mid-thought like you're already in the conversation
 - Always end with a specific detail, number, or outcome
+- Never cite statistics or percentages unless they are well known facts
+- Never use emojis
 """.strip()
 
 USER_PROMPT = """
@@ -28,3 +30,7 @@ Bad examples, never write like this:
 
 Just write it.
 """.strip()
+
+
+
+
