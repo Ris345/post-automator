@@ -1,0 +1,36 @@
+{
+  "runs": [
+    {
+      "version": "v1",
+      "run_id": "20260322_174722",
+      "n": 10,
+      "avg_rule_score": 75.0,
+      "avg_llm_score": 76.0,
+      "avg_final_score": 75.6,
+      "pass_rate_pct": 80,
+      "hard_fail_count": 2,
+      "violation_counts": {
+        "no_statistics": 2,
+        "ends_with_specific": 5,
+        "no_corporate_speak": 1,
+        "no_forbidden_verbs": 1
+      },
+      "run_file": "v1_run_20260322_174722.json"
+    },
+    {
+      "version": "v2",
+      "run_id": "20260322_175115",
+      "n": 10,
+      "avg_rule_score": 86.7,
+      "avg_llm_score": 55.0,
+      "avg_final_score": 67.7,
+      "pass_rate_pct": 60,
+      "hard_fail_count": 1,
+      "violation_counts": {
+        "ends_with_specific": 4,
+        "no_statistics": 1
+      },
+      "run_file": "v2_run_20260322_175115.json"
+    }
+  ]
+}

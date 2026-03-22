@@ -1,0 +1,58 @@
+{
+  "runs": [
+    {
+      "iteration": 0,
+      "version": "v1",
+      "avg_rule": 95.0,
+      "avg_llm": 70.0,
+      "avg_final": 80.0,
+      "pass_rate": 100,
+      "hard_fails": 0
+    },
+    {
+      "iteration": 1,
+      "version": "opt_v1_1",
+      "avg_rule": 20.0,
+      "avg_llm": null,
+      "avg_final": 20.0,
+      "pass_rate": 20,
+      "hard_fails": 4
+    },
+    {
+      "iteration": 2,
+      "version": "opt_v1_2",
+      "avg_rule": 56.7,
+      "avg_llm": null,
+      "avg_final": 56.7,
+      "pass_rate": 60,
+      "hard_fails": 2
+    },
+    {
+      "iteration": 3,
+      "version": "opt_v1_3",
+      "avg_rule": 78.3,
+      "avg_llm": null,
+      "avg_final": 78.3,
+      "pass_rate": 80,
+      "hard_fails": 1
+    },
+    {
+      "iteration": 4,
+      "version": "opt_v1_4",
+      "avg_rule": 58.3,
+      "avg_llm": null,
+      "avg_final": 58.3,
+      "pass_rate": 60,
+      "hard_fails": 2
+    },
+    {
+      "iteration": 5,
+      "version": "opt_v1_5",
+      "avg_rule": 60.0,
+      "avg_llm": 76.0,
+      "avg_final": 69.6,
+      "pass_rate": 60,
+      "hard_fails": 2
+    }
+  ]
+}

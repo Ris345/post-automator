@@ -1,0 +1,903 @@
+{
+  "meta": {
+    "version": "v1",
+    "run_id": "20260322_174722",
+    "n": 10,
+    "model": "gpt-4o-mini",
+    "temperature": 0.85,
+    "max_tokens": 300,
+    "llm_judge": true
+  },
+  "outputs": [
+    {
+      "text": "Using CloudWatch Metrics in conjunction with Lambda's built-in error handling allows for real-time alerting on failure rates exceeding 5%, giving immediate visibility into function reliability.",
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": false,
+            "hard_fail": true
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_statistics",
+          "ends_with_specific"
+        ],
+        "passed_count": 10,
+        "total_count": 12,
+        "has_hard_fail": true,
+        "rule_score": 0.0
+      },
+      "llm_judge": {
+        "authenticity": 2,
+        "specificity": 2,
+        "insight_density": 2,
+        "tone_fit": 1,
+        "total_raw": 7,
+        "reasoning": "While the post provides a specific scenario, it lacks a personal touch or unique experience that would enhance its authenticity.",
+        "llm_score": 70.0
+      },
+      "rule_score": 0.0,
+      "llm_score": 70.0,
+      "final_score": 42.0,
+      "hard_fail": true,
+      "latency_ms": 1816
+    },
+    {
+      "text": "Kubernetes' default eviction policies can lead to sudden pod disruptions during node maintenance unless you configure Pod Disruption Budgets to allow for controlled availability, ensuring critical services remain online during upgrades.",
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "ends_with_specific"
+        ],
+        "passed_count": 11,
+        "total_count": 12,
+        "has_hard_fail": false,
+        "rule_score": 91.7
+      },
+      "llm_judge": {
+        "authenticity": 3,
+        "specificity": 2,
+        "insight_density": 2,
+        "tone_fit": 1,
+        "total_raw": 8,
+        "reasoning": "The post is specific about Kubernetes' eviction policies but could provide a more concrete scenario to enhance specificity.",
+        "llm_score": 80.0
+      },
+      "rule_score": 91.7,
+      "llm_score": 80.0,
+      "final_score": 84.7,
+      "hard_fail": false,
+      "latency_ms": 2246
+    },
+    {
+      "text": "Running Kubernetes on AWS with managed node groups using EKS simplifies scaling, but setting the proper Resource Requests and Limits is crucial to avoid CPU throttling, which can degrade pod performance during traffic spikes.",
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "ends_with_specific"
+        ],
+        "passed_count": 11,
+        "total_count": 12,
+        "has_hard_fail": false,
+        "rule_score": 91.7
+      },
+      "llm_judge": {
+        "authenticity": 2,
+        "specificity": 2,
+        "insight_density": 2,
+        "tone_fit": 1,
+        "total_raw": 7,
+        "reasoning": "The post lacks a concrete scenario or example that would enhance its specificity and insight density.",
+        "llm_score": 70.0
+      },
+      "rule_score": 91.7,
+      "llm_score": 70.0,
+      "final_score": 78.7,
+      "hard_fail": false,
+      "latency_ms": 1862
+    },
+    {
+      "text": "Using VPC peering instead of a VPN for inter-account communication in AWS reduces latency and avoids the overhead of encryption, allowing for sub-millisecond response times in internal service calls.",
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "ends_with_specific"
+        ],
+        "passed_count": 11,
+        "total_count": 12,
+        "has_hard_fail": false,
+        "rule_score": 91.7
+      },
+      "llm_judge": {
+        "authenticity": 3,
+        "specificity": 3,
+        "insight_density": 2,
+        "tone_fit": 1,
+        "total_raw": 9,
+        "reasoning": "While the post is specific and authentic, the insight about latency and encryption overhead is somewhat obvious for those familiar with AWS networking.",
+        "llm_score": 90.0
+      },
+      "rule_score": 91.7,
+      "llm_score": 90.0,
+      "final_score": 90.7,
+      "hard_fail": false,
+      "latency_ms": 1766
+    },
+    {
+      "text": "Kubernetes HPA can only scale based on metrics from the metrics server, so if you\u2019re not collecting and exposing custom metrics, you miss opportunities for efficient resource utilization during traffic spikes.",
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "ends_with_specific"
+        ],
+        "passed_count": 11,
+        "total_count": 12,
+        "has_hard_fail": false,
+        "rule_score": 91.7
+      },
+      "llm_judge": {
+        "authenticity": 2,
+        "specificity": 2,
+        "insight_density": 2,
+        "tone_fit": 1,
+        "total_raw": 7,
+        "reasoning": "The post lacks a concrete scenario or example that would enhance its specificity.",
+        "llm_score": 70.0
+      },
+      "rule_score": 91.7,
+      "llm_score": 70.0,
+      "final_score": 78.7,
+      "hard_fail": false,
+      "latency_ms": 2875
+    },
+    {
+      "text": "Using Ingress annotations in EKS to automatically manage SSL certificates with AWS Certificate Manager eliminates the need for manual updates and streamlines security compliance for over 50 services.",
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_corporate_speak"
+        ],
+        "passed_count": 11,
+        "total_count": 12,
+        "has_hard_fail": false,
+        "rule_score": 91.7
+      },
+      "llm_judge": {
+        "authenticity": 2,
+        "specificity": 3,
+        "insight_density": 2,
+        "tone_fit": 1,
+        "total_raw": 8,
+        "reasoning": "The post is somewhat authentic but lacks a personal touch or specific experience that would enhance its credibility.",
+        "llm_score": 80.0
+      },
+      "rule_score": 91.7,
+      "llm_score": 80.0,
+      "final_score": 84.7,
+      "hard_fail": false,
+      "latency_ms": 1497
+    },
+    {
+      "text": "Configuring IAM roles with least privilege access for Lambda functions reduces the risk of unauthorized actions and ensures that your functions only have permissions for the specific AWS resources they need to interact with.",
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [],
+        "passed_count": 12,
+        "total_count": 12,
+        "has_hard_fail": false,
+        "rule_score": 100.0
+      },
+      "llm_judge": {
+        "authenticity": 2,
+        "specificity": 2,
+        "insight_density": 2,
+        "tone_fit": 1,
+        "total_raw": 7,
+        "reasoning": "The post provides a general principle about IAM roles but lacks a concrete scenario or specific example that would enhance its authenticity and specificity.",
+        "llm_score": 70.0
+      },
+      "rule_score": 100.0,
+      "llm_score": 70.0,
+      "final_score": 82.0,
+      "hard_fail": false,
+      "latency_ms": 3025
+    },
+    {
+      "text": "Kubernetes' Pod Disruption Budgets enforce availability during voluntary disruptions, ensuring that at least 70% of replicas remain running when you drain a node for maintenance.",
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": false,
+            "hard_fail": true
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_statistics"
+        ],
+        "passed_count": 11,
+        "total_count": 12,
+        "has_hard_fail": true,
+        "rule_score": 0.0
+      },
+      "llm_judge": {
+        "authenticity": 3,
+        "specificity": 2,
+        "insight_density": 2,
+        "tone_fit": 1,
+        "total_raw": 8,
+        "reasoning": "While the post is authentic and has a clear tone, it lacks a concrete scenario that demonstrates the application of Pod Disruption Budgets in a specific context.",
+        "llm_score": 80.0
+      },
+      "rule_score": 0.0,
+      "llm_score": 80.0,
+      "final_score": 48.0,
+      "hard_fail": true,
+      "latency_ms": 3112
+    },
+    {
+      "text": "Using RDS with Multi-AZ deployments reduces downtime during failovers but can lead to increased latency in write-heavy workloads due to the synchronous replication mechanism.",
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [],
+        "passed_count": 12,
+        "total_count": 12,
+        "has_hard_fail": false,
+        "rule_score": 100.0
+      },
+      "llm_judge": {
+        "authenticity": 3,
+        "specificity": 2,
+        "insight_density": 2,
+        "tone_fit": 1,
+        "total_raw": 8,
+        "reasoning": "While the post is authentic and has a clear tone, it lacks a concrete scenario that would enhance specificity.",
+        "llm_score": 80.0
+      },
+      "rule_score": 100.0,
+      "llm_score": 80.0,
+      "final_score": 88.0,
+      "hard_fail": false,
+      "latency_ms": 1328
+    },
+    {
+      "text": "Kubernetes Pod Disruption Budgets ensure application availability during node maintenance, but misconfiguring them can lead to cascading failures if too many pods are allowed to be unavailable at once.",
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_forbidden_verbs"
+        ],
+        "passed_count": 11,
+        "total_count": 12,
+        "has_hard_fail": false,
+        "rule_score": 91.7
+      },
+      "llm_judge": {
+        "authenticity": 2,
+        "specificity": 2,
+        "insight_density": 2,
+        "tone_fit": 1,
+        "total_raw": 7,
+        "reasoning": "The post lacks a concrete scenario or example that illustrates the impact of misconfiguring Pod Disruption Budgets.",
+        "llm_score": 70.0
+      },
+      "rule_score": 91.7,
+      "llm_score": 70.0,
+      "final_score": 78.7,
+      "hard_fail": false,
+      "latency_ms": 2353
+    }
+  ],
+  "aggregate": {
+    "avg_rule_score": 75.0,
+    "avg_llm_score": 76.0,
+    "avg_final_score": 75.6,
+    "pass_rate_pct": 80,
+    "hard_fail_count": 2,
+    "violation_counts": {
+      "no_statistics": 2,
+      "ends_with_specific": 5,
+      "no_corporate_speak": 1,
+      "no_forbidden_verbs": 1
+    }
+  }
+}

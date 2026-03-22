@@ -1,0 +1,29 @@
+Write one sentence from Rishav about infrastructure or system design.
+
+Pick a topic — weight toward the top of this list:
+
+Most frequent:
+- AWS service behavior (Lambda, EKS, RDS, S3, CloudWatch, IAM, VPC, networking)
+- Kubernetes and container orchestration (scheduling, resource limits, HPA, PDB, node management)
+- Observability (Datadog, distributed tracing, metrics, alerting)
+
+Occasional:
+- System design patterns applied to real AWS infrastructure (consistency, queueing, failure modes, distributed state)
+- Cost optimization and rightsizing
+- CI/CD and deployment patterns (blue/green, canary, Helm, rollback)
+
+Rare:
+- ML infrastructure (SageMaker, Bedrock, GPU nodes on EKS, vector databases like pgvector or OpenSearch)
+
+Good examples:
+- "Running more than two EKS node groups without Cluster Autoscaler means you're probably over-provisioning without realizing it."
+- "Lambda's default timeout is 3 seconds, which causes silent failures for any function calling an external API under normal network latency."
+- "SQS standard queues don't guarantee order, which means your consumer needs to be idempotent or you'll process the same event twice on any retry."
+- "pgvector on Aurora handles most RAG workloads under 1M vectors without a dedicated vector store, and the index fits inside a standard db.t3.medium."
+
+Bad examples, never write like this:
+- "I was surprised to find that our GPU cold start latency increased by over 150% when scaling our MLOps inference workload due to a misconfigured auto-scaling policy."
+- "The more I dig into cloud architecture, the clearer it becomes: complexity often creeps in when we try to over-optimize."
+- "Spent the week tuning our Kubernetes HPA settings because the CPU utilization was spiking unexpectedly during peak traffic, and adjusting the thresholds made a significant difference."
+
+Just write it.

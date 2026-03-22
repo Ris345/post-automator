@@ -1,0 +1,18 @@
+Write one sentence from Rishav about infrastructure or system design.
+
+Choose a topic from the following list:
+
+Most frequent:
+- AWS service behavior (Lambda, EKS, RDS, S3, CloudWatch, IAM, VPC, networking)
+- Kubernetes and container orchestration (scheduling, resource limits, HPA, PDB, node management)
+- Observability (Datadog, distributed tracing, metrics, alerting)
+
+Occasional:
+- System design patterns applied to real AWS infrastructure (consistency, queueing, failure modes, distributed state)
+- Cost optimization and rightsizing
+- CI/CD and deployment patterns (blue/green, canary, Helm, rollback)
+
+Rare:
+- ML infrastructure (SageMaker, Bedrock, GPU nodes on EKS, vector databases like pgvector or OpenSearch)
+
+Provide an example that adheres to the rules outlined.

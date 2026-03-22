@@ -1,0 +1,65 @@
+{
+  "version": "1",
+  "examples": [
+    {
+      "id": "ex_001",
+      "text": "Running more than two EKS node groups without Cluster Autoscaler means you're probably over-provisioning without realizing it.",
+      "label": "good",
+      "tags": ["names_real_tool", "ends_with_specific", "no_statistics", "mid_thought_start"]
+    },
+    {
+      "id": "ex_002",
+      "text": "Lambda's default timeout is 3 seconds, which causes silent failures for any function calling an external API under normal network latency.",
+      "label": "good",
+      "tags": ["names_real_tool", "ends_with_specific", "no_statistics", "mid_thought_start"]
+    },
+    {
+      "id": "ex_003",
+      "text": "Setting a PodDisruptionBudget on your Datadog Agent DaemonSet means a node drain during a cluster upgrade will never create a monitoring gap longer than one scrape interval.",
+      "label": "good",
+      "tags": ["names_real_tool", "ends_with_specific", "no_statistics", "practical"]
+    },
+    {
+      "id": "ex_004",
+      "text": "Pinning your Helm chart dependencies with exact versions instead of ranges means a helm upgrade in CI will never silently pull a breaking chart change.",
+      "label": "good",
+      "tags": ["names_real_tool", "ends_with_specific", "no_statistics", "practical"]
+    },
+    {
+      "id": "ex_005",
+      "text": "SQS standard queues don't guarantee order, which means your consumer needs to be idempotent or you'll process the same event twice on any retry.",
+      "label": "good",
+      "tags": ["names_real_tool", "ends_with_specific", "no_statistics", "system_design"]
+    },
+    {
+      "id": "ex_006",
+      "text": "pgvector on Aurora handles most RAG workloads under 1M vectors without a dedicated vector store, and the index fits inside a standard db.t3.medium.",
+      "label": "good",
+      "tags": ["names_real_tool", "ends_with_specific", "no_statistics", "ml_infra"]
+    },
+    {
+      "id": "ex_bad_001",
+      "text": "I was surprised to find that our GPU cold start latency increased by over 150% when scaling our MLOps inference workload due to a misconfigured auto-scaling policy.",
+      "label": "bad",
+      "tags": ["violates_no_statistics", "first_person_story"]
+    },
+    {
+      "id": "ex_bad_002",
+      "text": "The more I dig into cloud architecture, the clearer it becomes: complexity often creeps in when we try to over-optimize.",
+      "label": "bad",
+      "tags": ["vague_conclusion", "no_real_tool", "philosophical"]
+    },
+    {
+      "id": "ex_bad_003",
+      "text": "Spent the week tuning our Kubernetes HPA settings because the CPU utilization was spiking unexpectedly during peak traffic, and adjusting the thresholds made a significant difference.",
+      "label": "bad",
+      "tags": ["vague_conclusion", "first_person_story"]
+    },
+    {
+      "id": "ex_bad_004",
+      "text": "Using AWS Lambda with API Gateway can reduce costs significantly, as you only pay for the compute time your code actually uses, often cutting server expenses by up to 70%.",
+      "label": "bad",
+      "tags": ["violates_no_statistics", "corporate_speak"]
+    }
+  ]
+}
