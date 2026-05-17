@@ -22,6 +22,14 @@ All secrets (`OPENAI_API_KEY`, `LINKEDIN_ACCESS_TOKEN`, `LINKEDIN_PERSON_URN`) a
 
 ECR pull access is granted via a repository policy to the Lambda service principal (not the execution role). The Lambda execution role only has `AWSLambdaBasicExecutionRole`.
 
+## Local Setup
+
+Copy `.env.example` to `.env` and fill in all values. Prompt lab scripts auto-load it — no manual `source` needed.
+
+```bash
+pip install -r prompt_lab/requirements.txt   # openai + python-dotenv
+```
+
 ## Deployment
 
 **Build & push image** (after any lambda/ code change):
@@ -87,14 +95,20 @@ prompt_lab/
 └── results/         # per-run JSON files + history.json index + optimize_log.json
 ```
 
+**Prompt version resolution:** `v1` is special — eval/generate load directly from `lambda/prompt.py`. All other versions (`v2`, `v3`, ...) read from `prompt_lab/prompts/system_vN.txt` + `user_vN.txt`.
+
 **Manual workflow:**
 ```bash
-python prompt_lab/eval.py --version v1 --n 10       # eval current prompt
-python prompt_lab/generate.py --base v1 --out v2    # generate one improved version
-python prompt_lab/eval.py --version v2 --n 10       # eval the candidate
-python prompt_lab/score_history.py                  # compare all versions
-python prompt_lab/export.py --version v2            # deploy winner to lambda/prompt.py
+python prompt_lab/eval.py --version v1 --n 10            # eval current prompt
+python prompt_lab/eval.py --version v1 --n 5 --no-llm-judge  # rule checks only, free
+python prompt_lab/generate.py --base v1 --out v2         # generate one improved version
+python prompt_lab/eval.py --version v2 --n 10            # eval the candidate
+python prompt_lab/score_history.py                       # compare all versions
+python prompt_lab/export.py --version v2 --dry-run       # preview before writing
+python prompt_lab/export.py --version v2                 # deploy winner to lambda/prompt.py
 ```
+
+**Warning — export.py strips `pick_topic()`:** `export.py` writes only `SYSTEM_PROMPT` and `USER_PROMPT` to `lambda/prompt.py`. The `TOPICS` list and `pick_topic()` function are lost. After export, manually restore the `TOPICS`/`pick_topic` block from git history — `openai_client.py` imports `pick_topic` and the lambda will fail without it.
 
 **Automated optimization (cost-controlled):**
 ```bash
@@ -128,4 +142,3 @@ python prompt_lab/optimize.py --base v1 --max-iters 5 --target 88
 | `linkedin_access_token` | — (sensitive) |
 | `linkedin_person_urn` | — (sensitive) |
 
-AWS account: ``, region: ``, IAM user: ``.
