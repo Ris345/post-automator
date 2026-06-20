@@ -1,7 +1,7 @@
 """Rule-based compliance checks + LLM judge for LinkedIn post evaluation."""
 import re
 import json
-from openai import OpenAI
+from anthropic import Anthropic
 
 REAL_TOOLS = {
     # Core AWS
@@ -143,15 +143,18 @@ Reply with JSON only:
 
 
 def run_llm_judge(text: str, api_key: str) -> dict:
-    client = OpenAI(api_key=api_key)
-    resp = client.chat.completions.create(
-        model="gpt-4o",
-        messages=[{"role": "user", "content": JUDGE_PROMPT.format(text=text)}],
+    client = Anthropic(api_key=api_key)
+    resp = client.messages.create(
+        model="claude-sonnet-4-6",
         max_tokens=150,
         temperature=0.0,
-        response_format={"type": "json_object"},
+        messages=[{"role": "user", "content": JUDGE_PROMPT.format(text=text)}],
     )
-    result = json.loads(resp.choices[0].message.content)
+    raw = resp.content[0].text
+    m = re.search(r'\{.*\}', raw, re.DOTALL)
+    if not m:
+        raise ValueError(f"LLM judge returned no JSON: {raw[:200]}")
+    result = json.loads(m.group())
     llm_score = round((result.get("total", 0) / 10) * 100, 1)
     return {
         "authenticity": result.get("authenticity", 0),

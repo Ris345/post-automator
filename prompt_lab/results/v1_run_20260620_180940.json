@@ -1,0 +1,921 @@
+{
+  "meta": {
+    "version": "v1",
+    "run_id": "20260620_180940",
+    "n": 10,
+    "model": "gpt-4o-mini",
+    "temperature": 0.85,
+    "max_tokens": 300,
+    "llm_judge": false
+  },
+  "outputs": [
+    {
+      "text": "Using a single VPC with multiple subnets for different environments can lead to unintended cross-environment communication, so I always deploy separate VPCs to maintain isolation and security across production and staging.",
+      "latency_ms": 1149,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": false,
+            "hard_fail": true
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_hedging",
+          "ends_with_specific"
+        ],
+        "passed_count": 12,
+        "total_count": 14,
+        "has_hard_fail": true,
+        "rule_score": 0.0
+      },
+      "rule_score": 0.0,
+      "llm_score": null,
+      "final_score": 0.0,
+      "hard_fail": true
+    },
+    {
+      "text": "Using AWS RDS with read replicas across multiple Availability Zones not only improves read throughput but also decreases failover time to under 30 seconds when the primary instance becomes unhealthy.",
+      "latency_ms": 928,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [],
+        "passed_count": 14,
+        "total_count": 14,
+        "has_hard_fail": false,
+        "rule_score": 100.0
+      },
+      "rule_score": 100.0,
+      "llm_score": null,
+      "final_score": 100.0,
+      "hard_fail": false
+    },
+    {
+      "text": "EKS cluster autoscaler only scales nodes down when pods are in a PDB state, so underestimating your pod disruption budget can leave you over-provisioned during low traffic times.",
+      "latency_ms": 1194,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": false,
+            "hard_fail": true
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_hedging",
+          "ends_with_specific"
+        ],
+        "passed_count": 12,
+        "total_count": 14,
+        "has_hard_fail": true,
+        "rule_score": 0.0
+      },
+      "rule_score": 0.0,
+      "llm_score": null,
+      "final_score": 0.0,
+      "hard_fail": true
+    },
+    {
+      "text": "EKS with cluster auto-scaler configured to scale based on metrics from CloudWatch can efficiently manage workloads during traffic spikes without manual intervention, reducing pod eviction events by over 30%.",
+      "latency_ms": 1228,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": false,
+            "hard_fail": true
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": false,
+            "hard_fail": true
+          },
+          {
+            "rule": "no_conditional",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_statistics",
+          "no_hedging",
+          "no_conditional"
+        ],
+        "passed_count": 11,
+        "total_count": 14,
+        "has_hard_fail": true,
+        "rule_score": 0.0
+      },
+      "rule_score": 0.0,
+      "llm_score": null,
+      "final_score": 0.0,
+      "hard_fail": true
+    },
+    {
+      "text": "Using IAM roles with fine-grained permissions on Lambda functions reduces the risk of privilege escalation and simplifies auditing by limiting access to only the resources each function needs.",
+      "latency_ms": 1411,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [],
+        "passed_count": 14,
+        "total_count": 14,
+        "has_hard_fail": false,
+        "rule_score": 100.0
+      },
+      "rule_score": 100.0,
+      "llm_score": null,
+      "final_score": 100.0,
+      "hard_fail": false
+    },
+    {
+      "text": "Kubernetes pod disruption budgets effectively safeguard critical applications by allowing only a specified percentage of pods to be unavailable during voluntary disruptions, which maintains service resilience even during rolling updates.",
+      "latency_ms": 824,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "ends_with_specific"
+        ],
+        "passed_count": 13,
+        "total_count": 14,
+        "has_hard_fail": false,
+        "rule_score": 92.9
+      },
+      "rule_score": 92.9,
+      "llm_score": null,
+      "final_score": 92.9,
+      "hard_fail": false
+    },
+    {
+      "text": "Using S3 bucket policies with condition keys can fine-tune access permissions based on IP addresses, ensuring that only requests from your corporate network trigger sensitive workflows like photo uploads.",
+      "latency_ms": 942,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": false,
+            "hard_fail": true
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_forbidden_verbs",
+          "no_hedging"
+        ],
+        "passed_count": 12,
+        "total_count": 14,
+        "has_hard_fail": true,
+        "rule_score": 0.0
+      },
+      "rule_score": 0.0,
+      "llm_score": null,
+      "final_score": 0.0,
+      "hard_fail": true
+    },
+    {
+      "text": "Kubernetes Horizontal Pod Autoscaler with a 5-minute stabilization window prevents flapping by allowing pods to scale down only after consistent metrics over time, which smooths out resource usage during unpredictable spikes.",
+      "latency_ms": 1017,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "ends_with_specific"
+        ],
+        "passed_count": 13,
+        "total_count": 14,
+        "has_hard_fail": false,
+        "rule_score": 92.9
+      },
+      "rule_score": 92.9,
+      "llm_score": null,
+      "final_score": 92.9,
+      "hard_fail": false
+    },
+    {
+      "text": "Kubernetes PodDisruptionBudgets (PDB) prevent cascading failures during node maintenance, ensuring at least one replica remains available, which is critical for high-availability services during rolling updates.",
+      "latency_ms": 1042,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_forbidden_verbs",
+          "ends_with_specific"
+        ],
+        "passed_count": 12,
+        "total_count": 14,
+        "has_hard_fail": false,
+        "rule_score": 85.7
+      },
+      "rule_score": 85.7,
+      "llm_score": null,
+      "final_score": 85.7,
+      "hard_fail": false
+    },
+    {
+      "text": "Configuring IAM roles with specific permissions for EKS service accounts allows you to enforce the principle of least privilege and streamline security without cluttering your overall AWS environment.",
+      "latency_ms": 1020,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_conditional",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_conditional",
+          "no_corporate_speak"
+        ],
+        "passed_count": 12,
+        "total_count": 14,
+        "has_hard_fail": false,
+        "rule_score": 85.7
+      },
+      "rule_score": 85.7,
+      "llm_score": null,
+      "final_score": 85.7,
+      "hard_fail": false
+    }
+  ],
+  "aggregate": {
+    "avg_rule_score": 55.7,
+    "avg_llm_score": null,
+    "avg_final_score": 55.7,
+    "pass_rate_pct": 60,
+    "hard_fail_count": 4,
+    "violation_counts": {
+      "no_hedging": 4,
+      "ends_with_specific": 5,
+      "no_statistics": 1,
+      "no_conditional": 2,
+      "no_forbidden_verbs": 2,
+      "no_corporate_speak": 1
+    }
+  }
+}

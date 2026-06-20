@@ -162,18 +162,3 @@ def run_llm_judge(text: str, api_key: str) -> dict:
         "reasoning": result.get("reasoning", ""),
         "llm_score": llm_score,
     }
-
-
-def score_output(text: str, api_key: str) -> dict:
-    rule_result = run_rule_checks(text)
-    llm_result = run_llm_judge(text, api_key)
-    final_score = round(0.4 * rule_result["rule_score"] + 0.6 * llm_result["llm_score"], 1)
-    return {
-        "text": text,
-        "rule_checks": rule_result,
-        "llm_judge": llm_result,
-        "rule_score": rule_result["rule_score"],
-        "llm_score": llm_result["llm_score"],
-        "final_score": final_score,
-        "hard_fail": rule_result["has_hard_fail"],
-    }

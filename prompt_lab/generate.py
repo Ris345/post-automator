@@ -117,9 +117,9 @@ def main():
     parser.add_argument("--focus", default="", help="Specific weakness to target")
     args = parser.parse_args()
 
-    api_key = os.environ.get("OPENAI_API_KEY")
+    api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
-        print("Error: OPENAI_API_KEY not set")
+        print("Error: ANTHROPIC_API_KEY not set")
         sys.exit(1)
 
     out_sf = PROMPTS_DIR / f"system_{args.out}.txt"
@@ -134,23 +134,21 @@ def main():
     print(f"Generating '{args.out}' from '{args.base}'...")
     print(context)
 
-    from openai import OpenAI
-    client = OpenAI(api_key=api_key)
-    resp = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {"role": "system", "content": META_SYSTEM},
-            {"role": "user", "content": META_USER.format(
-                context=context,
-                system=base_system,
-                user=base_user,
-            )},
-        ],
+    from anthropic import Anthropic
+    client = Anthropic(api_key=api_key)
+    resp = client.messages.create(
+        model="claude-sonnet-4-6",
         max_tokens=1200,
         temperature=0.7,
+        system=META_SYSTEM,
+        messages=[{"role": "user", "content": META_USER.format(
+            context=context,
+            system=base_system,
+            user=base_user,
+        )}],
     )
 
-    new_system, new_user = parse_response(resp.choices[0].message.content)
+    new_system, new_user = parse_response(resp.content[0].text)
     PROMPTS_DIR.mkdir(exist_ok=True)
     out_sf.write_text(new_system)
     out_uf.write_text(new_user)
