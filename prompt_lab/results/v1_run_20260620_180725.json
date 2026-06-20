@@ -1,0 +1,926 @@
+{
+  "meta": {
+    "version": "v1",
+    "run_id": "20260620_180725",
+    "n": 10,
+    "model": "gpt-4o-mini",
+    "temperature": 0.85,
+    "max_tokens": 300,
+    "llm_judge": false
+  },
+  "outputs": [
+    {
+      "text": "Using AWS Lambda with reserved concurrency allows you to throttle invocations while preventing cold starts, ensuring your function can handle bursts without overwhelming downstream services.",
+      "latency_ms": 1187,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": false,
+            "hard_fail": true
+          },
+          {
+            "rule": "no_conditional",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_forbidden_verbs",
+          "no_hedging",
+          "no_conditional",
+          "ends_with_specific"
+        ],
+        "passed_count": 10,
+        "total_count": 14,
+        "has_hard_fail": true,
+        "rule_score": 0.0
+      },
+      "rule_score": 0.0,
+      "llm_score": null,
+      "final_score": 0.0,
+      "hard_fail": true
+    },
+    {
+      "text": "Running EKS with a Pod Disruption Budget configured to allow only one pod eviction at a time helps maintain service availability during node maintenance, ensuring the application remains responsive even during updates.",
+      "latency_ms": 1018,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_forbidden_verbs",
+          "ends_with_specific"
+        ],
+        "passed_count": 12,
+        "total_count": 14,
+        "has_hard_fail": false,
+        "rule_score": 85.7
+      },
+      "rule_score": 85.7,
+      "llm_score": null,
+      "final_score": 85.7,
+      "hard_fail": false
+    },
+    {
+      "text": "Kubernetes' Horizontal Pod Autoscaler prioritizes CPU usage by default, so if your applications are I/O bound, consider using custom metrics with Prometheus to better match resource scaling to actual load.",
+      "latency_ms": 1329,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_conditional",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_forbidden_verbs",
+          "no_conditional"
+        ],
+        "passed_count": 12,
+        "total_count": 14,
+        "has_hard_fail": false,
+        "rule_score": 85.7
+      },
+      "rule_score": 85.7,
+      "llm_score": null,
+      "final_score": 85.7,
+      "hard_fail": false
+    },
+    {
+      "text": "EKS default limits for CPU and memory resources often lead to throttling under high load, so setting appropriate resource requests and limits in your deployments can prevent unexpected performance degradation.",
+      "latency_ms": 1025,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": false,
+            "hard_fail": true
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_hedging"
+        ],
+        "passed_count": 13,
+        "total_count": 14,
+        "has_hard_fail": true,
+        "rule_score": 0.0
+      },
+      "rule_score": 0.0,
+      "llm_score": null,
+      "final_score": 0.0,
+      "hard_fail": true
+    },
+    {
+      "text": "Kubernetes pod disruption budgets prevent service outages by ensuring a minimum number of replicas remain available during voluntary disruptions, which is crucial for maintaining uptime in a production environment with over 500 microservices.",
+      "latency_ms": 969,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_forbidden_verbs"
+        ],
+        "passed_count": 13,
+        "total_count": 14,
+        "has_hard_fail": false,
+        "rule_score": 92.9
+      },
+      "rule_score": 92.9,
+      "llm_score": null,
+      "final_score": 92.9,
+      "hard_fail": false
+    },
+    {
+      "text": "Kubernetes' Horizontal Pod Autoscaler only kicks in when CPU usage exceeds 50% by default, so misconfigured resource requests can lead to underutilized pods and delayed scaling during traffic spikes.",
+      "latency_ms": 1183,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": false,
+            "hard_fail": true
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": false,
+            "hard_fail": true
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_statistics",
+          "no_hedging"
+        ],
+        "passed_count": 12,
+        "total_count": 14,
+        "has_hard_fail": true,
+        "rule_score": 0.0
+      },
+      "rule_score": 0.0,
+      "llm_score": null,
+      "final_score": 0.0,
+      "hard_fail": true
+    },
+    {
+      "text": "Kubernetes pod disruption budgets prevent applications from crashing during node maintenance, and setting a budget of 1 allows for seamless updates in a two-replica deployment without downtime.",
+      "latency_ms": 990,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_conditional",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_conditional"
+        ],
+        "passed_count": 13,
+        "total_count": 14,
+        "has_hard_fail": false,
+        "rule_score": 92.9
+      },
+      "rule_score": 92.9,
+      "llm_score": null,
+      "final_score": 92.9,
+      "hard_fail": false
+    },
+    {
+      "text": "Kubernetes pods restart more frequently than expected when you set liveness probes too aggressively, which can lead to cascading failures if not handled with proper readiness checks.",
+      "latency_ms": 952,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": false,
+            "hard_fail": true
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_hedging",
+          "ends_with_specific"
+        ],
+        "passed_count": 12,
+        "total_count": 14,
+        "has_hard_fail": true,
+        "rule_score": 0.0
+      },
+      "rule_score": 0.0,
+      "llm_score": null,
+      "final_score": 0.0,
+      "hard_fail": true
+    },
+    {
+      "text": "Kubernetes\u2019 PodDisruptionBudgets prevent excessive disruptions during node maintenance, ensuring that at least 80% of replicas remain available, which is crucial for maintaining service reliability during upgrades.",
+      "latency_ms": 1228,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": false,
+            "hard_fail": true
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_statistics",
+          "no_forbidden_verbs",
+          "ends_with_specific"
+        ],
+        "passed_count": 11,
+        "total_count": 14,
+        "has_hard_fail": true,
+        "rule_score": 0.0
+      },
+      "rule_score": 0.0,
+      "llm_score": null,
+      "final_score": 0.0,
+      "hard_fail": true
+    },
+    {
+      "text": "Setting a Kubernetes PodDisruptionBudget to 1 on a production deployment can lead to unexpected downtime during maintenance because it may not account for ephemeral workloads or node draining scenarios.",
+      "latency_ms": 1024,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": false,
+            "hard_fail": true
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_hedging"
+        ],
+        "passed_count": 13,
+        "total_count": 14,
+        "has_hard_fail": true,
+        "rule_score": 0.0
+      },
+      "rule_score": 0.0,
+      "llm_score": null,
+      "final_score": 0.0,
+      "hard_fail": true
+    }
+  ],
+  "aggregate": {
+    "avg_rule_score": 35.7,
+    "avg_llm_score": null,
+    "avg_final_score": 35.7,
+    "pass_rate_pct": 40,
+    "hard_fail_count": 6,
+    "violation_counts": {
+      "no_forbidden_verbs": 5,
+      "no_hedging": 5,
+      "no_conditional": 3,
+      "ends_with_specific": 4,
+      "no_statistics": 2
+    }
+  }
+}

@@ -1,0 +1,922 @@
+{
+  "meta": {
+    "version": "v1",
+    "run_id": "20260620_175908",
+    "n": 10,
+    "model": "gpt-4o-mini",
+    "temperature": 0.85,
+    "max_tokens": 300,
+    "llm_judge": false
+  },
+  "outputs": [
+    {
+      "text": "CloudFormation stacks with nested templates allow for modular infrastructure management, but mismanaging dependencies can lead to failed deployments that take hours to troubleshoot when rolling back to a previous version.",
+      "latency_ms": 1058,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": false,
+            "hard_fail": true
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_hedging",
+          "names_real_tool",
+          "ends_with_specific"
+        ],
+        "passed_count": 11,
+        "total_count": 14,
+        "has_hard_fail": true,
+        "rule_score": 0.0
+      },
+      "rule_score": 0.0,
+      "llm_score": null,
+      "final_score": 0.0,
+      "hard_fail": true
+    },
+    {
+      "text": "Using VPC Flow Logs with CloudWatch Insights allows you to visualize network traffic patterns and identify security risks in real time, significantly reducing the time to detect anomalies.",
+      "latency_ms": 746,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "ends_with_specific"
+        ],
+        "passed_count": 13,
+        "total_count": 14,
+        "has_hard_fail": false,
+        "rule_score": 92.9
+      },
+      "rule_score": 92.9,
+      "llm_score": null,
+      "final_score": 92.9,
+      "hard_fail": false
+    },
+    {
+      "text": "Setting the VPC Flow Logs to capture all traffic can quickly lead to large volumes of CloudWatch logs that increase costs, so using filters to log only accepted traffic often yields better insights without breaking the bank.",
+      "latency_ms": 1007,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": false,
+            "hard_fail": true
+          },
+          {
+            "rule": "no_conditional",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_hedging",
+          "no_conditional",
+          "ends_with_specific"
+        ],
+        "passed_count": 11,
+        "total_count": 14,
+        "has_hard_fail": true,
+        "rule_score": 0.0
+      },
+      "rule_score": 0.0,
+      "llm_score": null,
+      "final_score": 0.0,
+      "hard_fail": true
+    },
+    {
+      "text": "Kubernetes deployments with PodDisruptionBudgets can prevent service interruptions during node upgrades, but misconfiguring them can lead to unexpected throttling and degraded performance during maintenance windows.",
+      "latency_ms": 801,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": false,
+            "hard_fail": true
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_hedging",
+          "ends_with_specific"
+        ],
+        "passed_count": 12,
+        "total_count": 14,
+        "has_hard_fail": true,
+        "rule_score": 0.0
+      },
+      "rule_score": 0.0,
+      "llm_score": null,
+      "final_score": 0.0,
+      "hard_fail": true
+    },
+    {
+      "text": "Using Kubernetes network policies to limit pod communication reduces the attack surface and simplifies compliance, especially when enforcing ingress and egress rules across multiple namespaces.",
+      "latency_ms": 851,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "ends_with_specific"
+        ],
+        "passed_count": 13,
+        "total_count": 14,
+        "has_hard_fail": false,
+        "rule_score": 92.9
+      },
+      "rule_score": 92.9,
+      "llm_score": null,
+      "final_score": 92.9,
+      "hard_fail": false
+    },
+    {
+      "text": "Using AWS IAM roles for service-to-service communication in EKS allows you to manage permissions more securely, and leveraging Kubernetes Service Accounts with OIDC integration, I reduced the attack surface by eliminating static credentials in 10 microservices.",
+      "latency_ms": 1083,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_corporate_speak"
+        ],
+        "passed_count": 13,
+        "total_count": 14,
+        "has_hard_fail": false,
+        "rule_score": 92.9
+      },
+      "rule_score": 92.9,
+      "llm_score": null,
+      "final_score": 92.9,
+      "hard_fail": false
+    },
+    {
+      "text": "Using AWS RDS with Multi-AZ deployments ensures high availability, but you still need to monitor replication lag with CloudWatch metrics to avoid silent data inconsistencies during failovers.",
+      "latency_ms": 1001,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_forbidden_verbs"
+        ],
+        "passed_count": 13,
+        "total_count": 14,
+        "has_hard_fail": false,
+        "rule_score": 92.9
+      },
+      "rule_score": 92.9,
+      "llm_score": null,
+      "final_score": 92.9,
+      "hard_fail": false
+    },
+    {
+      "text": "Kubernetes HPA can misbehave when scaling based on average CPU, so I always set resource requests and limits explicitly to prevent unexpected pod evictions during traffic spikes.",
+      "latency_ms": 715,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": false,
+            "hard_fail": true
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_hedging"
+        ],
+        "passed_count": 13,
+        "total_count": 14,
+        "has_hard_fail": true,
+        "rule_score": 0.0
+      },
+      "rule_score": 0.0,
+      "llm_score": null,
+      "final_score": 0.0,
+      "hard_fail": true
+    },
+    {
+      "text": "Kubernetes deployments with a PodDisruptionBudget ensure at least one instance remains available during voluntary disruptions, which is critical for maintaining uptime in production workloads.",
+      "latency_ms": 2080,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": false,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": false,
+            "hard_fail": false
+          }
+        ],
+        "violations": [
+          "no_forbidden_verbs",
+          "ends_with_specific"
+        ],
+        "passed_count": 12,
+        "total_count": 14,
+        "has_hard_fail": false,
+        "rule_score": 85.7
+      },
+      "rule_score": 85.7,
+      "llm_score": null,
+      "final_score": 85.7,
+      "hard_fail": false
+    },
+    {
+      "text": "Configuring VPC endpoints for S3 access reduces latency and costs by eliminating NAT Gateway usage, allowing internal applications to interact with S3 directly in the same region.",
+      "latency_ms": 1191,
+      "rule_checks": {
+        "checks": [
+          {
+            "rule": "single_sentence",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_em_dash",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_semicolon",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_starts_with_if",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_statistics",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_emoji",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_vague_conclusions",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_forbidden_verbs",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_hedging",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_conditional",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_corporate_speak",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "no_first_person_story",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "names_real_tool",
+            "passed": true,
+            "hard_fail": false
+          },
+          {
+            "rule": "ends_with_specific",
+            "passed": true,
+            "hard_fail": false
+          }
+        ],
+        "violations": [],
+        "passed_count": 14,
+        "total_count": 14,
+        "has_hard_fail": false,
+        "rule_score": 100.0
+      },
+      "rule_score": 100.0,
+      "llm_score": null,
+      "final_score": 100.0,
+      "hard_fail": false
+    }
+  ],
+  "aggregate": {
+    "avg_rule_score": 55.7,
+    "avg_llm_score": null,
+    "avg_final_score": 55.7,
+    "pass_rate_pct": 60,
+    "hard_fail_count": 4,
+    "violation_counts": {
+      "no_hedging": 4,
+      "names_real_tool": 1,
+      "ends_with_specific": 6,
+      "no_conditional": 1,
+      "no_corporate_speak": 1,
+      "no_forbidden_verbs": 2
+    }
+  }
+}

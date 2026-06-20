@@ -45,16 +45,21 @@ def main():
     parser.add_argument("--no-llm-judge", action="store_true", help="Skip LLM judge (rule checks only, faster)")
     args = parser.parse_args()
 
-    api_key = os.environ.get("OPENAI_API_KEY")
-    if not api_key:
+    openai_key = os.environ.get("OPENAI_API_KEY")
+    if not openai_key:
         print("Error: OPENAI_API_KEY not set")
+        sys.exit(1)
+
+    anthropic_key = os.environ.get("ANTHROPIC_API_KEY")
+    if not args.no_llm_judge and not anthropic_key:
+        print("Error: ANTHROPIC_API_KEY not set (use --no-llm-judge to skip)")
         sys.exit(1)
 
     system_prompt, user_prompt = load_prompt_version(args.version)
     print(f"Evaluating '{args.version}' — {args.n} samples", "  [rule-only]" if args.no_llm_judge else "")
     print("-" * 70)
 
-    samples_raw = generate_samples(system_prompt, user_prompt, api_key, args.n)
+    samples_raw = generate_samples(system_prompt, user_prompt, openai_key, args.n)
 
     scored_outputs = []
     for raw in samples_raw:
@@ -70,7 +75,7 @@ def main():
                 "hard_fail": rule_result["has_hard_fail"],
             }
         else:
-            scored = score_output(raw["text"], api_key)
+            scored = score_output(raw["text"], anthropic_key)
             scored["latency_ms"] = raw["latency_ms"]
 
         status = "✗ HARD" if scored["hard_fail"] else ("✓" if scored["final_score"] >= 65 else "~")

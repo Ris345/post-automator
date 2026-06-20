@@ -50,8 +50,8 @@ def save_prompt(version: str, system: str, user: str):
     (PROMPTS_DIR / f"user_{version}.txt").write_text(user)
 
 
-def generate_candidate(base_version: str, out_version: str, weakness_context: str, api_key: str) -> tuple[str, str]:
-    from openai import OpenAI
+def generate_candidate(base_version: str, out_version: str, weakness_context: str, anthropic_key: str) -> tuple[str, str]:
+    from anthropic import Anthropic
     base_system, base_user = load_prompt(base_version)
 
     meta_system = """You are an expert prompt engineer. Improve the given prompt to fix the specific weaknesses listed.
@@ -82,18 +82,16 @@ Critical requirements:
 - Harden the rule that causes most violations
 - Every good example must end with a specific detail, number, or named service"""
 
-    client = OpenAI(api_key=api_key)
-    resp = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {"role": "system", "content": meta_system},
-            {"role": "user", "content": meta_user},
-        ],
+    client = Anthropic(api_key=anthropic_key)
+    resp = client.messages.create(
+        model="claude-sonnet-4-6",
         max_tokens=1200,
         temperature=0.7,
+        system=meta_system,
+        messages=[{"role": "user", "content": meta_user}],
     )
 
-    text = resp.choices[0].message.content
+    text = resp.content[0].text
     if "SYSTEM_PROMPT:" not in text or "USER_PROMPT:" not in text:
         raise ValueError(f"Bad generator response:\n{text[:300]}")
 
@@ -104,9 +102,9 @@ Critical requirements:
     return new_system, new_user
 
 
-def eval_version(version: str, n: int, api_key: str, rules_only: bool) -> dict:
+def eval_version(version: str, n: int, openai_key: str, anthropic_key: str | None, rules_only: bool) -> dict:
     system, user = load_prompt(version)
-    samples = generate_samples(system, user, api_key, n)
+    samples = generate_samples(system, user, openai_key, n)
 
     scored = []
     for s in samples:
@@ -121,7 +119,7 @@ def eval_version(version: str, n: int, api_key: str, rules_only: bool) -> dict:
                 "hard_fail": rule["has_hard_fail"],
             }
         else:
-            llm = run_llm_judge(s["text"], api_key)
+            llm = run_llm_judge(s["text"], anthropic_key)
             entry = {
                 "text": s["text"],
                 "rule_checks": rule,
@@ -191,9 +189,14 @@ def main():
     parser.add_argument("--rules-only", action="store_true", help="Skip LLM judge entirely (free run)")
     args = parser.parse_args()
 
-    api_key = os.environ.get("OPENAI_API_KEY")
-    if not api_key:
+    openai_key = os.environ.get("OPENAI_API_KEY")
+    if not openai_key:
         print("Error: OPENAI_API_KEY not set")
+        sys.exit(1)
+
+    anthropic_key = os.environ.get("ANTHROPIC_API_KEY") if not args.rules_only else None
+    if not args.rules_only and not anthropic_key:
+        print("Error: ANTHROPIC_API_KEY not set (use --rules-only to skip LLM judge)")
         sys.exit(1)
 
     est = estimate_calls(args.n, args.max_iters, args.rules_only)
@@ -204,7 +207,7 @@ def main():
 
     # Eval base
     print(f"[base] Evaluating {args.base}...")
-    best_result = eval_version(args.base, args.n, api_key, args.rules_only)
+    best_result = eval_version(args.base, args.n, openai_key, anthropic_key, args.rules_only)
     best_version = args.base
     print(f"[base] rule={best_result['avg_rule']} llm={best_result['avg_llm']} final={best_result['avg_final']} pass={best_result['pass_rate']}%")
 
@@ -215,12 +218,12 @@ def main():
         print(f"\n[iter {i}] Generating {candidate_version}...")
 
         context = build_weakness_context(best_result)
-        new_system, new_user = generate_candidate(best_version, candidate_version, context, api_key)
+        new_system, new_user = generate_candidate(best_version, candidate_version, context, anthropic_key)
         save_prompt(candidate_version, new_system, new_user)
 
         # Phase 1: rule-only (cheap)
         print(f"[iter {i}] Phase 1 — rule checks...")
-        phase1 = eval_version(candidate_version, args.n, api_key, rules_only=True)
+        phase1 = eval_version(candidate_version, args.n, openai_key, anthropic_key, rules_only=True)
         print(f"[iter {i}] Rule score: {phase1['avg_rule']} (best so far: {best_result['avg_rule']})")
 
         if args.rules_only:
@@ -228,7 +231,7 @@ def main():
         elif phase1["avg_rule"] >= best_result["avg_rule"]:
             # Phase 2: LLM judge only if rules improved
             print(f"[iter {i}] Phase 2 — LLM judge (rule score improved or held)...")
-            result = eval_version(candidate_version, args.n, api_key, rules_only=False)
+            result = eval_version(candidate_version, args.n, openai_key, anthropic_key, rules_only=False)
         else:
             print(f"[iter {i}] Skipping LLM judge — rule score dropped, candidate rejected")
             result = phase1

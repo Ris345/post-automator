@@ -31,6 +31,117 @@
         "no_statistics": 1
       },
       "run_file": "v2_run_20260322_175115.json"
+    },
+    {
+      "version": "v1",
+      "run_id": "20260620_175908",
+      "n": 10,
+      "avg_rule_score": 55.7,
+      "avg_llm_score": null,
+      "avg_final_score": 55.7,
+      "pass_rate_pct": 60,
+      "hard_fail_count": 4,
+      "violation_counts": {
+        "no_hedging": 4,
+        "names_real_tool": 1,
+        "ends_with_specific": 6,
+        "no_conditional": 1,
+        "no_corporate_speak": 1,
+        "no_forbidden_verbs": 2
+      },
+      "run_file": "v1_run_20260620_175908.json"
+    },
+    {
+      "version": "v1",
+      "run_id": "20260620_180051",
+      "n": 10,
+      "avg_rule_score": 17.9,
+      "avg_llm_score": null,
+      "avg_final_score": 17.9,
+      "pass_rate_pct": 20,
+      "hard_fail_count": 8,
+      "violation_counts": {
+        "no_forbidden_verbs": 3,
+        "ends_with_specific": 6,
+        "no_hedging": 7,
+        "no_conditional": 3,
+        "no_statistics": 1
+      },
+      "run_file": "v1_run_20260620_180051.json"
+    },
+    {
+      "version": "v1",
+      "run_id": "20260620_180348",
+      "n": 10,
+      "avg_rule_score": 18.6,
+      "avg_llm_score": null,
+      "avg_final_score": 18.6,
+      "pass_rate_pct": 20,
+      "hard_fail_count": 8,
+      "violation_counts": {
+        "no_statistics": 4,
+        "no_hedging": 5,
+        "ends_with_specific": 4,
+        "no_conditional": 1,
+        "no_forbidden_verbs": 2,
+        "names_real_tool": 1
+      },
+      "run_file": "v1_run_20260620_180348.json"
+    },
+    {
+      "version": "v1",
+      "run_id": "20260620_180626",
+      "n": 10,
+      "avg_rule_score": 47.1,
+      "avg_llm_score": null,
+      "avg_final_score": 47.1,
+      "pass_rate_pct": 50,
+      "hard_fail_count": 5,
+      "violation_counts": {
+        "no_forbidden_verbs": 2,
+        "ends_with_specific": 6,
+        "no_hedging": 4,
+        "no_statistics": 1,
+        "no_conditional": 2
+      },
+      "run_file": "v1_run_20260620_180626.json"
+    },
+    {
+      "version": "v1",
+      "run_id": "20260620_180725",
+      "n": 10,
+      "avg_rule_score": 35.7,
+      "avg_llm_score": null,
+      "avg_final_score": 35.7,
+      "pass_rate_pct": 40,
+      "hard_fail_count": 6,
+      "violation_counts": {
+        "no_forbidden_verbs": 5,
+        "no_hedging": 5,
+        "no_conditional": 3,
+        "ends_with_specific": 4,
+        "no_statistics": 2
+      },
+      "run_file": "v1_run_20260620_180725.json"
+    },
+    {
+      "version": "v1",
+      "run_id": "20260620_180940",
+      "n": 10,
+      "avg_rule_score": 55.7,
+      "avg_llm_score": null,
+      "avg_final_score": 55.7,
+      "pass_rate_pct": 60,
+      "hard_fail_count": 4,
+      "violation_counts": {
+        "no_hedging": 4,
+        "ends_with_specific": 5,
+        "no_statistics": 1,
+        "no_conditional": 2,
+        "no_forbidden_verbs": 2,
+        "no_corporate_speak": 1
+      },
+      "run_file": "v1_run_20260620_180940.json"
     }
   ]
 }
