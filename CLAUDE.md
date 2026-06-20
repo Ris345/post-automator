@@ -115,7 +115,7 @@ python prompt_lab/export.py --version v2                 # deploy winner to lamb
 # Default: 5 iters, 5 samples each, two-phase scoring — ~$0.05 worst case
 python prompt_lab/optimize.py --base v1 --max-iters 5
 
-# Free run — rule checks only, no LLM judge
+# Skip per-sample LLM judge (still needs ANTHROPIC_API_KEY for candidate generation)
 python prompt_lab/optimize.py --base v1 --max-iters 5 --rules-only
 
 # Stop early when score hits target

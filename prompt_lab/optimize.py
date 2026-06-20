@@ -186,7 +186,7 @@ def main():
     parser.add_argument("--max-iters", type=int, default=5, help="Max iterations (default: 5)")
     parser.add_argument("--n", type=int, default=5, help="Samples per eval (default: 5 to save credits)")
     parser.add_argument("--target", type=float, default=88.0, help="Stop early if final score reaches this (default: 88)")
-    parser.add_argument("--rules-only", action="store_true", help="Skip LLM judge entirely (free run)")
+    parser.add_argument("--rules-only", action="store_true", help="Skip per-sample LLM judge (reduces cost; candidate generation still uses Anthropic)")
     args = parser.parse_args()
 
     openai_key = os.environ.get("OPENAI_API_KEY")
@@ -194,9 +194,9 @@ def main():
         print("Error: OPENAI_API_KEY not set")
         sys.exit(1)
 
-    anthropic_key = os.environ.get("ANTHROPIC_API_KEY") if not args.rules_only else None
-    if not args.rules_only and not anthropic_key:
-        print("Error: ANTHROPIC_API_KEY not set (use --rules-only to skip LLM judge)")
+    anthropic_key = os.environ.get("ANTHROPIC_API_KEY")
+    if not anthropic_key:
+        print("Error: ANTHROPIC_API_KEY not set (required for candidate generation)")
         sys.exit(1)
 
     est = estimate_calls(args.n, args.max_iters, args.rules_only)

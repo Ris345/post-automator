@@ -107,7 +107,9 @@ def llm_judge(draft: str) -> str:
     Args:
         draft: the post text to evaluate
     """
-    api_key = os.environ["ANTHROPIC_API_KEY"]
+    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    if not api_key:
+        raise RuntimeError("ANTHROPIC_API_KEY not set")
     result = _scorer_mod.run_llm_judge(draft, api_key)
     return json.dumps({
         "llm_score": result["llm_score"],

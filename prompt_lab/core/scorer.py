@@ -150,7 +150,11 @@ def run_llm_judge(text: str, api_key: str) -> dict:
         temperature=0.0,
         messages=[{"role": "user", "content": JUDGE_PROMPT.format(text=text)}],
     )
-    result = json.loads(resp.content[0].text)
+    raw = resp.content[0].text
+    m = re.search(r'\{.*\}', raw, re.DOTALL)
+    if not m:
+        raise ValueError(f"LLM judge returned no JSON: {raw[:200]}")
+    result = json.loads(m.group())
     llm_score = round((result.get("total", 0) / 10) * 100, 1)
     return {
         "authenticity": result.get("authenticity", 0),
